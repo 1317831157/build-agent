@@ -109,8 +109,8 @@ onMounted(() => {
         <div class="campus-ground"></div>
 
         <!-- 园区道路 -->
-        <div class="campus-road"></div>
-        <div class="campus-road vertical"></div>
+        <!-- <div class="campus-road"></div> -->
+        <!-- <div class="campus-road vertical"></div> -->
 
         <!-- 园区装饰点 -->
         <div class="campus-decoration decoration-1"></div>
@@ -302,7 +302,7 @@ onMounted(() => {
 .campus-3d {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 27%;
   transform: translate(-50%, -50%) rotateX(20deg) rotateY(0deg) rotateZ(0deg);
   transform-style: preserve-3d;
   animation: campusRotate 25s infinite linear;
@@ -409,11 +409,11 @@ onMounted(() => {
   z-index: 2;
 }
 
-.campus-road.vertical {
+/* .campus-road.vertical {
   width: 8px;
   height: 180px;
   transform: translateY(138px) rotateX(90deg) translateZ(-50px) rotateZ(90deg);
-}
+} */
 
 /* 园区装饰点 */
 .campus-decoration {
@@ -535,7 +535,7 @@ onMounted(() => {
 .floor-label {
   position: absolute;
   right: -25px;
-  top: 50%;
+  top: 20%;
   transform: translateY(-50%);
   font-size: 8px;
   color: #00ff80;
