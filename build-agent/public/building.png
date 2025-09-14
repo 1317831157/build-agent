@@ -1,0 +1,28 @@
+<svg width="150" height="200" viewBox="0 0 150 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#00e5ff;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#008cff;stop-opacity:1" />
+</linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+<feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+<feMerge>
+<feMergeNode in="coloredBlur"/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
+</defs>
+<path d="M20 195 L20 5 C20 2.23858 22.2386 0 25 0 L125 0 C127.761 0 130 2.23858 130 5 L130 195 C130 197.761 127.761 200 125 200 L25 200 C22.2386 200 20 197.761 20 195 Z" fill="url(#grad1)" opacity="0.3" filter="url(#glow)"/>
+<path d="M25 198 L25 3 C25 1.89543 25.8954 1 27 1 L123 1 C124.105 1 125 1.89543 125 3 L125 198 C125 199.105 124.105 200 123 200 L27 200 C25.8954 200 25 199.105 25 198 Z" fill="#051025" stroke="#00e5ff" stroke-width="2"/>
+<g fill="#ffff00" opacity="0.7">
+<script>
+for (let y = 10; y < 190; y += 12) {
+  for (let x = 35; x < 120; x += 12) {
+    if (Math.random() > 0.2) {
+      document.write(`<rect x="${x}" y="${y}" width="8" height="8" rx="1"/>`);
+    }
+  }
+}
+</script>
+</g>
+</svg>
