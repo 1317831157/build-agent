@@ -238,9 +238,9 @@ onMounted(() => {
 /* 右侧效果和指标区域 */
 .right-panel {
   background: rgba(15, 15, 35, 0.95);
-  border-radius: 25px;
-  padding: 25px;
-  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid rgba(0, 255, 255, 0.25);
   backdrop-filter: blur(25px);
   position: relative;
   overflow-y: auto;
@@ -269,14 +269,14 @@ onMounted(() => {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   text-align: center;
 }
 
 .section-title {
   font-size: 16px;
   color: #00ffff;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   text-align: center;
   font-weight: bold;
   background: linear-gradient(45deg, #00ffff, #0080ff);
@@ -288,10 +288,10 @@ onMounted(() => {
 /* 三维园区可视化 */
 .building-3d-container {
   background: linear-gradient(135deg, rgba(0, 20, 40, 0.9), rgba(0, 40, 20, 0.9));
-  border-radius: 15px;
-  padding: 20px;
-  border: 2px solid rgba(0, 255, 255, 0.4);
-  margin-bottom: 20px;
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid rgba(0, 255, 255, 0.35);
+  margin-bottom: 12px;
   perspective: 1200px;
   height: 380px;
   position: relative;
@@ -695,15 +695,15 @@ onMounted(() => {
 
 /* 神经节点状态样式 */
 .neural-nodes-section {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .node-status-card {
   background: rgba(15, 30, 45, 0.9);
-  border-radius: 15px;
-  padding: 18px;
-  margin-bottom: 15px;
-  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 255, 255, 0.25);
   transition: all 0.3s ease;
 }
 
@@ -716,7 +716,7 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .node-indicator {
@@ -778,8 +778,8 @@ onMounted(() => {
 .detail-row {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  gap: 10px;
-  margin-bottom: 8px;
+  gap: 8px;
+  margin-bottom: 6px;
   font-size: 13px;
   color: #cccccc;
 }
@@ -802,7 +802,7 @@ onMounted(() => {
   height: 6px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
-  margin-top: 12px;
+  margin-top: 8px;
   overflow: hidden;
 }
 

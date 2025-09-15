@@ -40,16 +40,16 @@ const loadVideo = (file) => {
   const url = URL.createObjectURL(file)
   videoPreview.value.src = url
   videoPreview.value.style.display = 'block'
-  
+
   videoPreview.value.addEventListener('loadedmetadata', () => {
     const duration = formatTime(videoPreview.value.duration)
     const size = formatFileSize(file.size)
-    
+
     videoDetails.value.innerHTML = `
       <p><strong>文件名:</strong> ${file.name}</p>
       <p><strong>分辨率:</strong> ${videoPreview.value.videoWidth}x${videoPreview.value.videoHeight}</p>
     `
-    
+
     videoInfo.value.style.display = 'block'
     selectBtn.value.style.display = 'block'
   })
@@ -71,12 +71,12 @@ const formatFileSize = (bytes) => {
   const units = ['B', 'KB', 'MB', 'GB']
   let size = bytes
   let unitIndex = 0
-  
+
   while (size >= 1024 && unitIndex < units.length - 1) {
     size /= 1024
     unitIndex++
   }
-  
+
   return `${size.toFixed(1)} ${units[unitIndex]}`
 }
 
@@ -93,7 +93,7 @@ onMounted(() => {
 <template>
   <div class="left-panel">
     <h2 class="panel-title">🎥 视频数据源</h2>
-    
+
     <div class="upload-zone" ref="uploadZone">
       <div class="upload-icon">📁</div>
       <p>拖拽视频文件到此处</p>
@@ -104,7 +104,7 @@ onMounted(() => {
     </div>
 
     <video class="video-preview" ref="videoPreview" controls muted></video>
-    
+
     <div class="video-info" ref="videoInfo">
       <h4 style="color: #00f5ff; margin-bottom: 10px;">📊 视频信息</h4>
       <div ref="videoDetails"></div>
@@ -118,11 +118,11 @@ onMounted(() => {
 /* ========== 左侧视频上传区域 ========== */
 .left-panel {
   background: rgba(15, 15, 30, 0.9);
-  border-radius: 20px;
-  padding: 20px;
-  border: 2px solid rgba(100, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid rgba(100, 255, 255, 0.25);
   backdrop-filter: blur(20px);
-  box-shadow: 0 20px 40px rgba(0, 100, 255, 0.15);
+  box-shadow: 0 12px 28px rgba(0, 100, 255, 0.15);
   position: relative;
   overflow: hidden;
   height: 100%;
@@ -140,8 +140,13 @@ onMounted(() => {
 }
 
 @keyframes scanLine {
-  0% { left: -100%; }
-  100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
 }
 
 .panel-title {
@@ -151,18 +156,18 @@ onMounted(() => {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   text-align: center;
   position: relative;
   z-index: 10;
 }
 
 .upload-zone {
-  border: 3px dashed rgba(100, 255, 255, 0.4);
-  border-radius: 15px;
-  padding: 30px 20px;
+  border: 2px dashed rgba(100, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 20px 16px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
@@ -183,15 +188,22 @@ onMounted(() => {
 }
 
 .upload-icon {
-  font-size: 48px;
+  font-size: 40px;
   color: #00f5ff;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   animation: float 2s ease-in-out infinite;
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .upload-zone p {
@@ -202,18 +214,18 @@ onMounted(() => {
 .video-preview {
   width: 100%;
   border-radius: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   display: none;
-  box-shadow: 0 10px 30px rgba(0, 245, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 245, 255, 0.28);
   position: relative;
   z-index: 10;
 }
 
 .video-info {
   background: rgba(0, 0, 0, 0.7);
-  padding: 15px;
+  padding: 12px;
   border-radius: 10px;
-  border: 1px solid rgba(100, 255, 255, 0.3);
+  border: 1px solid rgba(100, 255, 255, 0.25);
   display: none;
   position: relative;
   z-index: 10;
@@ -227,14 +239,14 @@ onMounted(() => {
 
 .select-btn {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   background: linear-gradient(45deg, #00f5ff, #0080ff);
   border: none;
-  border-radius: 25px;
+  border-radius: 20px;
   color: #000;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 8px;
   transition: all 0.3s;
   display: none;
   position: relative;
